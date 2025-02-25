@@ -7,7 +7,7 @@ function getRandomIntFromArray(arr) {
 
 function generateMultiplicationProblem() {
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const numbers2 = [2, 5, 10];
+    const numbers2 = [2, 3, 4, 5, 10];
     const num1 = getRandomIntFromArray(numbers);
     const num2 = getRandomIntFromArray(numbers);
     return {num1, num2, answer: num1 * num2};
@@ -15,7 +15,7 @@ function generateMultiplicationProblem() {
 
 function generateProblems() {
     problems = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         problems.push(generateMultiplicationProblem());
     }
 }
@@ -25,7 +25,7 @@ function showQuestion() {
         const problem = problems[currentProblemIndex];
         document.getElementById('question').textContent = `What is ${problem.num1} x ${problem.num2}?`;
         currentProblemIndex++;
-        setTimeout(showQuestion, 6000);
+        setTimeout(showQuestion, 3000);
     } else {
         showResults();
     }

@@ -49,7 +49,13 @@ function startQuiz() {
     document.getElementById('results').innerHTML = '';
     showQuestion();
 }
-
+document.addEventListener('DOMContentLoaded', function() {
+    var startButton = document.getElementById('startButton');
+    startButton.addEventListener('click', function() {
+        startQuiz;
+        console.log("Button clicked!"); // Example action
+    });
+});
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('startButton').addEventListener('click', startQuiz);
 });
